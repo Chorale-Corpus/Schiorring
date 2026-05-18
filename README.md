@@ -8,7 +8,7 @@ For scholarly reports, please use
 either the central "chorales corpus" citation (forthcoming)
 or the following for this specific sub-corpus:
 
-Derek Remeš, Victor Duy Phan, & Mark Gotham. 2024 (forthcoming). "Clausulae-Pairs in Multiple-Bass Chorales" in *Oxford Handbook of Musical Variation and Thematic Techniques*, (ed. Jeffrey Swinkin).
+Derek Remeš, Victor Duy Phan, & Mark Gotham. 2025. "Clausulae-Pairs in Multiple-Bass Chorales" in *Oxford Handbook of Musical Variation and Thematic Techniques*, (ed. Jeffrey Swinkin). 10.1093/oxfordhb/9780197645352.013.0032
 
 
 ## File formats
