@@ -1,15 +1,34 @@
-# Schiørring
+![Version](https://img.shields.io/github/v/release/Chorale-Corpus/Schiorring?display_name=tag)
+<!-- Zenodo DOI badge: insert after the first archived release, e.g.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX) -->
+![GitHub repo size](https://img.shields.io/github/repo-size/Chorale-Corpus/Schiorring)
+![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-9cf)
 
-Welcome! This is the version of record for the Niels Schiørring (1743–1789), _Choralbook_ dataset.
 
-The data is available under the CC-By-SA licence.
+This is a README file for a data repository originating from the
+[Chorale Corpus initiative](https://github.com/Chorale-Corpus), a multi-institutional effort
+to bring together a wide collection of digital chorale transcriptions for musicians and researchers.
+This repository is a sub-corpus of the meta-corpus
+[Chorale-Corpus/data](https://github.com/Chorale-Corpus/data)
+([DOI 10.5281/zenodo.17229783](https://doi.org/10.5281/zenodo.17229783)).
 
-For scholarly reports, please use 
-either the central "chorales corpus" citation (forthcoming)
-or the following for this specific sub-corpus:
+When you use (parts of) this dataset in your work, please read and cite the accompanying data report:
 
-Derek Remeš, Victor Duy Phan, & Mark Gotham. 2025. "Clausulae-Pairs in Multiple-Bass Chorales" in *Oxford Handbook of Musical Variation and Thematic Techniques*, (ed. Jeffrey Swinkin). [10.1093/oxfordhb/9780197645352.013.0032](https://doi.org/10.1093/oxfordhb/9780197645352.013.0032)
+_Gerhardt, K., Hentschel, J., Phan, V. D., Kirsch, M., Kirsch, K., & Gotham, M. R. H. (2026). Beyond Ba(t)ch: A Multimodal Meta-Corpus of Digital Chorale Transcriptions and Related Data. Transactions of the International Society for Music Information Retrieval, 9(1), 440–455. https://doi.org/10.5334/tismir.226_
 
+# Schiørring (1743–1789) – Choralbook dataset (A chorale corpus)
+
+Welcome! This is the version of record for the Niels Schiørring (1743–1789)
+_Choralbook_ dataset.
+
+## Getting the data
+
+* download the repository as a [ZIP file](https://github.com/Chorale-Corpus/Schiorring/archive/refs/heads/main.zip)
+* download a [Frictionless Datapackage](https://specs.frictionlessdata.io/data-package/) that includes concatenations
+  of the TSV files in the folders `measures`, `notes`, and `chords`, and a JSON descriptor:
+  * [schiorring.zip](https://github.com/Chorale-Corpus/Schiorring/releases/latest/download/schiorring.zip)
+  * [schiorring.datapackage.json](https://github.com/Chorale-Corpus/Schiorring/releases/latest/download/schiorring.datapackage.json)
+* clone the repo: `git clone https://github.com/Chorale-Corpus/Schiorring.git`
 
 ## File formats
 
@@ -65,6 +84,48 @@ and comes with a number of columns that describe the piece in numerous ways.
 A synoptic overview of the most important columns can be found 
 [here](https://dcmlab.github.io/mozart_piano_sonatas/#how-to-read-metadata-tsv).
 
+### Loading TSV files in Python
+
+Since the TSV files contain null values, lists, fractions, and numbers that are to be treated as strings,
+you may want to use this code to load any TSV files related to this repository (provided you're doing it
+in Python). After a quick `pip install -U ms3` (requires Python 3.10 or later) you'll be able to load any
+TSV like this:
+
+```python
+import ms3
+
+notes = ms3.load_tsv("notes/001_Ach!_Herre_from.notes.tsv")
+metadata = ms3.load_tsv("metadata.tsv")
+```
+
+Each TSV file comes with its own JSON descriptor (`*.resource.json`) that describes the meanings and
+datatypes of its columns ("fields"), follows the
+[Frictionless specification](https://specs.frictionlessdata.io/tabular-data-resource/),
+and can be used to validate and correctly load the described file.
+
+
+## Version history
+
+See the [GitHub releases](https://github.com/Chorale-Corpus/Schiorring/releases).
+
+## Questions, Suggestions, Corrections, Bug Reports
+
+Please [create an issue](https://github.com/Chorale-Corpus/Schiorring/issues) and/or feel free to fork and submit pull requests.
+
+## Cite as
+
+> Gerhardt, K., Hentschel, J., Phan, V. D., Kirsch, M., Kirsch, K., & Gotham, M. R. H. (2026). Beyond Ba(t)ch: A Multimodal Meta-Corpus of Digital Chorale Transcriptions and Related Data. Transactions of the International Society for Music Information Retrieval, 9(1), 440–455. https://doi.org/10.5334/tismir.226
+
+For this specific sub-corpus you may additionally cite:
+
+> Remeš, D., Phan, V. D., & Gotham, M. (2025). Clausulae-Pairs in Multiple-Bass Chorales. In J. Swinkin (Ed.), *Oxford Handbook of Musical Variation and Thematic Techniques*. Oxford University Press. https://doi.org/10.1093/oxfordhb/9780197645352.013.0032
+
+## License
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
+([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+
+![cc-by-nc-sa-image](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
 
 ## Overview
 |                  file_name                  |measures|labels|
